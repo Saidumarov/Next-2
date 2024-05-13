@@ -172,7 +172,7 @@ function UserLest() {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>{editId ? "Update Todo" : "Add Todo"}</ModalHeader>
+          <ModalHeader>{editId ? "Update User" : "Add User"}</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl>

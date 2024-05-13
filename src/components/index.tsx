@@ -81,7 +81,7 @@ function UserLest() {
 
   async function fetchData() {
     try {
-      const res = await axios.get("http://localhost:3000/users/api");
+      const res = await axios.get("https://next-2-alpha.vercel.app/users/api");
       const data = await res.data;
       setData(data);
     } catch (error) {

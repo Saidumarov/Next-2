@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     const collection = db.collection("users");
 
     const result = await collection.insertOne({ fullname, age });
-    const newComment = { id: result.insertedId, fullname, age };
+    const newComment = { fullname, age };
 
     return Response.json(newComment, { status: 201 });
   } catch (error) {

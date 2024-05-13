@@ -61,7 +61,7 @@ export async function PUT(
   try {
     const usersCollection = await connectToDatabase();
     const result = await usersCollection.updateOne(
-      { _id: new ObjectId(id) }, // Use new ObjectId(id) to convert string id to MongoDB ObjectId
+      { _id: new ObjectId(id) },
       { $set: updatedUser }
     );
     if (result.matchedCount === 1) {

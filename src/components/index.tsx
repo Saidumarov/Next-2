@@ -58,7 +58,7 @@ function UserLest() {
       loading: true,
     });
     try {
-      await axios.post("http://localhost:3000/users/api", user);
+      await axios.post("`https://next-2-alpha.vercel.app/users/api", user);
       toast({
         title: `Added successfully`,
         status: "success",

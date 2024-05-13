@@ -32,6 +32,7 @@ function UserLest() {
   const [Id, setId] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
+  const uri = window.location.href;
   const [btnloading, setBtnloading] = useState({
     loading: false,
     delete: false,
@@ -81,7 +82,7 @@ function UserLest() {
 
   async function fetchData() {
     try {
-      const res = await axios.get("https://next-2-alpha.vercel.app/users/api");
+      const res = await axios.get(`${uri}users/api`);
       const data = await res.data;
       setData(data);
     } catch (error) {
@@ -102,7 +103,7 @@ function UserLest() {
       id: id,
     });
     try {
-      await axios.delete(`http://localhost:3000/users/api/${id}`);
+      await axios.delete(`${uri}users/api/${id}`);
       toast({
         title: `Deleted successfully`,
         status: "error",
@@ -137,7 +138,7 @@ function UserLest() {
       ...btnloading,
       loading: true,
     });
-    await axios.put(`http://localhost:3000/users/api/${Id}`, user);
+    await axios.put(`${uri}users/api/${Id}`, user);
     onClose();
     fetchData();
     setEditId(false);
